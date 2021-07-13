@@ -53,15 +53,18 @@ class Compose:
         for tfm in self.transforms:
             input, target = tfm(input, target)
         return input, target
-    
+
 
 def resize(tensor, size, max_size=None):
     _, h, w = tensor.shape
+    # NOTE: this is a hack to circumvent that max_size needs to be larger than
+    # size; not sure if this allways works
     is_square = h == w
     if is_square:
         return tv.transforms.functional.resize(tensor, size)
-    return tv.transforms.functional.resize(tensor, size-1, max_size=max_size)
-    
+    return tv.transforms.functional.resize(tensor, size - 1, max_size=max_size)
+
+
 class Resize(nn.Module):
     input_keys = ["image", "mask", "segmentation"]
     target_keys = ["polygons", "boxes"]
@@ -77,7 +80,7 @@ class Resize(nn.Module):
         for key in self.input_keys:
             if key in inputs:
                 inputs[key] = resize(inputs[key], self.size, self.max_size)
-                
+
         targets = targets.copy()
         _, new_h, new_w = inputs["image"].shape
         scale_x, scale_y = new_w / origin_w, new_h / origin_h
