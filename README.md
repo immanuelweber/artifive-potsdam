@@ -4,6 +4,10 @@ http://rs.ipb.uni-bonn.de/data/artifive-potsdam/
 
 Please check the notebook to see how the code can be used to create a pytorch dataset, to prepare the data with transformations, and some visual samples of the dataset content.
 
+![potsdam image samples](potsdam_samples.png)
+
+![artificial image samples](artificial_samples.png)
+
 ## Dataset
 
 
