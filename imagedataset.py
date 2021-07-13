@@ -1,5 +1,6 @@
 import glob
 import json
+import os
 from collections import Counter, OrderedDict
 from pathlib import Path
 
@@ -10,8 +11,10 @@ import shapely.geometry
 import torch as th
 import torchvision as tv
 
-from utils import ld_to_dl
-import os
+
+def ld_to_dl(lst):
+    # list of dicts to dict of lists
+    return {key: [dic[key] for dic in lst] for key in lst[0]}
 
 
 def read_datafolder(path, sample_file):
