@@ -12,6 +12,7 @@ Please check the notebook to see how the code can be used to create a pytorch da
 | fullsized                        | 24              | 14          | 6019             | 3833         |
 | patched 600x600                  | 2400            | 1400        | 6978             | 4489         |
 | patched 600x600 + 200 px overlap | 5400            | 3150        | 15379            | 9793         |
+| artificial                       | 1000            |             | 10000            |              |
 
 ## Requirements
 
