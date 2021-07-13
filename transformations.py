@@ -90,33 +90,6 @@ class Resize(nn.Module):
                 ]
         return inputs, targets
 
-# def pad(tensor, padded_size, fill_value=0, ignore_channels=False):
-#     if tensor.shape[1:] != padded_size:
-#         padded_tensor = th.full(
-#             (tensor.shape[0], *padded_size),
-#             fill_value,
-#             dtype=tensor.dtype,
-#             device=tensor.device,
-#         )
-#         padded_tensor[:, : tensor.shape[1], : tensor.shape[2]] = tensor
-#         return padded_tensor
-#     return tensor
-
-
-# class Pad(nn.Module):
-#     def __init__(self, padded_size, fill_value=0):
-#         super().__init__()
-#         self.padded_size = padded_size
-#         self.fill_value = fill_value
-
-#     def forward(self, input, target):
-#         if input["image"].shape[1:] != self.padded_size:
-#             input = input.copy()
-#             for k in ["image", "mask", "segmentation"]:
-#                 if k in input:
-#                     input[k] = pad(input[k], self.padded_size, self.fill_value)
-#         return input, target
-
 
 class StandardNormalize(nn.Module):
     def __init__(self, mean, std):
