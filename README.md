@@ -4,6 +4,15 @@ http://rs.ipb.uni-bonn.de/data/artifive-potsdam/
 
 Please check the notebook to see how the code can be used to create a pytorch dataset, to prepare the data with transformations, and some visual samples of the dataset content.
 
+## Dataset
+
+
+| dataset                          | training images | test images | training objects | test objects |
+|----------------------------------|-----------------|-------------|------------------|--------------|
+| fullsized                        | 24              | 14          | 6019             | 3833         |
+| patched 600x600                  | 2400            | 1400        | 6978             | 4489         |
+| patched 600x600 + 200 px overlap | 5400            | 3150        | 15379            | 9793         |
+
 ## Requirements
 
 * numpy https://github.com/numpy/numpy
