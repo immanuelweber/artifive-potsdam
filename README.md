@@ -1,6 +1,8 @@
-# artifive-potsdam
+# ArtifiVe-Potsdam
 tooling and demo for ArtifiVe-Potsdam dataset
 http://rs.ipb.uni-bonn.de/data/artifive-potsdam/
+
+(abbrevation of Artificial Vehicles)
 
 Please check the notebook to see how the code can be used to create a pytorch dataset, to prepare the data with transformations, and some visual samples of the dataset content.
 
@@ -14,13 +16,19 @@ Please check the notebook to see how the code can be used to create a pytorch da
 
 ## Dataset
 
+* the annotations are provided as a single json file for each sub dataset called `annotations_*.json`
+* the content is a list of json dictionary for each sample (image + annotations) in the dataset
+* labels are stored in form of the class strings
+* objects are stored in form of their bounding polygons and in WKT format, which can for example be converted using shapely's `shapely.geometry.shape()`
+* a `is_difficult` flag is also contained, but is allways `false`
 
-| dataset                          | training images | test images | training objects | test objects |
-|----------------------------------|-----------------|-------------|------------------|--------------|
-| fullsized                        | 24              | 14          | 6019             | 3833         |
-| patched 600x600                  | 2400            | 1400        | 6978             | 4489         |
-| patched 600x600 + 200 px overlap | 5400            | 3150        | 15379            | 9793         |
-| artificial                       | 1000            |             | 10000            |              |
+
+| dataset                            | training images | test images | training objects | test objects |
+|------------------------------------|-----------------|-------------|------------------|--------------|
+| fullsized                          | 24              | 14          | 6019             | 3833         |
+| patched 600x600 px                 | 2400            | 1400        | 6978             | 4489         |
+| patched 600x600 px+ 200 px overlap | 5400            | 3150        | 15379            | 9793         |
+| artificial                         | 1000            |             | 10000            |              |
 
 ## Requirements
 
