@@ -1,0 +1,13 @@
+name: artifive-potsdam
+channels:
+- pytorch
+- conda-forge
+dependencies:
+- numpy
+- matplotlib
+- pytorch>=1.9.0
+- torchvision>=0.10.0
+- Pillow
+- Shapely
+- PyTurboJPEG
+- libjpeg-turbo
