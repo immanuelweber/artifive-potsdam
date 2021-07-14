@@ -1,18 +1,34 @@
 # ArtifiVe-Potsdam
-tooling and demo for ArtifiVe-Potsdam dataset
+tooling and demo for ArtifiVe-Potsdam (Artificial Vehicles) dataset
 http://rs.ipb.uni-bonn.de/data/artifive-potsdam/
 
-(abbrevation of Artificial Vehicles)
 
 Please check the notebook to see how the code can be used to create a pytorch dataset, to prepare the data with transformations, and some visual samples of the dataset content.
 
 ## real (Potsdam) samples
 
-![potsdam image samples](potsdam_samples.png)
+based on ISPRS 2D Semantic Labeling Contest - Potsdam:
+
+![potsdam image samples](docs/potsdam_samples.png)
 
 ## artificial samples
 
-![artificial image samples](artificial_samples.png)
+based on blueprints:
+
+![artificial image samples](docs/artificial_samples.png)
+
+## Installation
+
+Download the content of the repository and run the following to install the requirments:
+
+```
+pip install -r requirements.txt
+```
+This installs all requirements with `pip`, except of `libjpeg-turbo`, which can easily be installed with:
+```
+conda install libjpeg-turbo -c conda-forge
+```
+
 
 ## Dataset
 
@@ -30,6 +46,13 @@ Please check the notebook to see how the code can be used to create a pytorch da
 | patched 600x600 px+ 200 px overlap | 5400            | 3150        | 15379            | 9793         |
 | artificial                         | 1000            |             | 10000            |              |
 
+### Training + Test split
+
+The split is based on the original ISPRS 2D Semantic Labeling Contest split. The green colored tiles are the test section.
+
+![artificial image samples](docs/tile_overview-resized-train_test_split.png)
+
+
 ## Requirements
 
 * numpy https://github.com/numpy/numpy
@@ -40,7 +63,6 @@ Please check the notebook to see how the code can be used to create a pytorch da
 * matplotlib https://matplotlib.org/
 * optional: libjpeg-turbo https://github.com/libjpeg-turbo/libjpeg-turbo/ + https://github.com/lilohuang/PyTurboJPEG
 
-* TODO: add requirements file
  
 ## Benchmark details
 
