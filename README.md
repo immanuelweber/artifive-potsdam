@@ -48,7 +48,7 @@ conda install libjpeg-turbo -c conda-forge
 
 ### Training + Test split
 
-The split is based on the original ISPRS 2D Semantic Labeling Contest split. The green colored tiles are the test section.
+The split is based on the original [ISPRS 2D Semantic Labeling Contest](https://www2.isprs.org/commissions/comm2/wg4/benchmark/2d-sem-label-potsdam/) split. The green colored tiles are the test section.
 
 ![artificial image samples](docs/tile_overview-resized-train_test_split.png)
 
@@ -77,5 +77,5 @@ The split is based on the original ISPRS 2D Semantic Labeling Contest split. The
 ### Testing
 
 * we test on patched/600x600/test dataset
-* we use pycocotools (https://github.com/cocodataset/cocoapi) to evaluate
+* we use [pycocotools](https://github.com/cocodataset/cocoapi) to evaluate
 * the baselines report the AP with IOU threshold 0.5
